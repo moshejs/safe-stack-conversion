@@ -1,7 +1,7 @@
 {
   "name": "safe-stack-conversion",
   "version": "1.0.0",
-  "description": "Convert a stack of YC SAFEs (post-money & pre-money) and convertible notes into a pro-forma cap table at a priced round — fixed-point solve, cap/discount best-price, interest accrual. Zero dependencies.",
+  "description": "Convert a stack of YC SAFEs (post-money & pre-money) and convertible notes into a pro-forma cap table at a priced round — exact solve, cap/discount/round best-price, option-pool increase, interest accrual. Zero dependencies.",
   "keywords": ["safe", "yc-safe", "convertible-note", "cap-table", "startup", "fundraising", "post-money", "valuation-cap", "dilution", "equity", "venture-capital"],
   "homepage": "https://moshemalka.com",
   "repository": { "type": "git", "url": "git+https://github.com/moshejs/safe-stack-conversion.git" },
@@ -11,8 +11,14 @@
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js", "require": "./dist/index.cjs" } },
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+    },
+    "./package.json": "./package.json"
+  },
   "files": ["dist"],
   "sideEffects": false,
   "scripts": {
