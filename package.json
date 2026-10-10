@@ -1,10 +1,25 @@
 {
   "name": "safe-stack-conversion",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Convert a stack of YC SAFEs (post-money & pre-money) and convertible notes into a pro-forma cap table at a priced round — exact solve, cap/discount/round best-price, option-pool increase, interest accrual. Zero dependencies.",
-  "keywords": ["safe", "yc-safe", "convertible-note", "cap-table", "startup", "fundraising", "post-money", "valuation-cap", "dilution", "equity", "venture-capital"],
+  "keywords": [
+    "safe",
+    "yc-safe",
+    "convertible-note",
+    "cap-table",
+    "startup",
+    "fundraising",
+    "post-money",
+    "valuation-cap",
+    "dilution",
+    "equity",
+    "venture-capital"
+  ],
   "homepage": "https://moshemalka.com",
-  "repository": { "type": "git", "url": "git+https://github.com/moshejs/safe-stack-conversion.git" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moshejs/safe-stack-conversion.git"
+  },
   "bugs": "https://github.com/moshejs/safe-stack-conversion/issues",
   "author": "Moshe Malka <hello@moshemalka.com> (https://moshemalka.com)",
   "license": "MIT",
@@ -14,12 +29,20 @@
   "types": "./dist/index.d.cts",
   "exports": {
     ".": {
-      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./package.json": "./package.json"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --clean",
@@ -27,6 +50,12 @@
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run typecheck && npm run test && npm run build"
   },
-  "devDependencies": { "tsup": "^8.5.0", "typescript": "^5.8.0", "vitest": "^3.2.0" },
-  "engines": { "node": ">=18" }
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }
